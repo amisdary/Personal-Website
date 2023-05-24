@@ -1,6 +1,6 @@
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <div style="text-align: left;">
-    <ul style="list-style: none; padding: 0;">
+    <ul style="list-style: none; padding: 10%;">
       <li *ngFor="let header of headers" style="display: inline-block; padding: 1%;">
         <a routerLink="/{{ header.link }}" title="{{ header.name.toLowerCase() }}">
           {{ header.name }}
@@ -13,20 +13,16 @@
   <span class="title-center">{{applicationName}}</span>
 
 
-  <div style="text-align: right; padding: 1%;">
-    <a href="https://www.linkedin.com/in/andremisdary">
+  <div style="text-align: right;">
+    <a href="https://www.linkedin.com/in/andremisdary" style="padding-right: 5%;">
       <img src="../../../assets/linkedin-logo.svg" height="24" width="24">
     </a>
-    <a href="https://www.github.com/amisdary">
+    <a href="https://www.github.com/amisdary" style="padding-right: 5%;">
       <img src="../../../assets/github-logo.svg" height="24" width="24">
     </a>
-    <!-- <a href="mailto: amisdary@yahoo.com">
-      <img src="../../../assets/mail.svg" height="24" width="24">
-    </a> -->
-    <button>
-      <mat-icon>home</mat-icon>
-    </button>
-
+    <a href="mailto: amisdary@yahoo.com" style="color: black; padding-right: 5%;">
+      <mat-icon>email</mat-icon>
+    </a>
 
     <a href="../../../assets/Andre-Misdary-Resume.pdf" target="_blank" rel="noopener noreferrer">
       RESUME

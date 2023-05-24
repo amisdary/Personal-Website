@@ -7,13 +7,24 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body style="background-image: url(/assets/MicrosoftTeams-image.png);
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: 100% 100%;">
-  <app-root></app-root>
+<body>
+  <div class="section">
+    <video class="main-video-container" autoplay muted loop>
+      <source src="../assets/videoFile.mp4" type="video/mp4">
+    </video>
+    <video class="secondary-video-container" autoplay muted loop>
+      <source src="../assets/10 Second Shot Clock with Buzzer.mp4" type="video/mp4">
+    </video>
+  </div>
 </body>
+
+<div class="application">
+  <app-root></app-root>
+</div>
+
+
 
 </html>
