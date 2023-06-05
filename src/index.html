@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>PersonalWebsite</title>
+  <title>André Misdary</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -12,19 +12,20 @@
 
 <body>
   <div class="section">
-    <video class="main-video-container" autoplay muted loop>
+    <video class="background-video-container" id="background-video" autoplay muted>
       <source src="../assets/videoFile.mp4" type="video/mp4">
     </video>
-    <video class="secondary-video-container" autoplay muted loop>
+    <video class="overlay-video-container" id="overlay-video" autoplay muted>
       <source src="../assets/10 Second Shot Clock with Buzzer.mp4" type="video/mp4">
     </video>
+    <div class="scrollbar-container">
+      <div class="scrollbar"></div>
+    </div>
+    <div class="application-contents">
+      <app-root></app-root>
+    </div>
   </div>
 </body>
-
-<div class="application">
-  <app-root></app-root>
-</div>
-
 
 
 </html>

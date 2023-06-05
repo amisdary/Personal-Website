@@ -1,4 +1,5 @@
 <div style="display: flex; justify-content: space-between; align-items: center;">
+  <!-- Left Side of Toolbar -->
   <div style="text-align: left;">
     <ul style="list-style: none; padding: 10%;">
       <li *ngFor="let header of headers" style="display: inline-block; padding: 1%;">
@@ -12,8 +13,8 @@
   <!-- Center of Toolbar -->
   <span class="title-center">{{applicationName}}</span>
 
-
-  <div style="text-align: right;">
+  <!-- Right Side of Toolbar -->
+  <div style="text-align: right; padding-right: 10%;">
     <a href="https://www.linkedin.com/in/andremisdary" style="padding-right: 5%;">
       <img src="../../../assets/linkedin-logo.svg" height="24" width="24">
     </a>
@@ -23,7 +24,6 @@
     <a href="mailto: amisdary@yahoo.com" style="color: black; padding-right: 5%;">
       <mat-icon>email</mat-icon>
     </a>
-
     <a href="../../../assets/Andre-Misdary-Resume.pdf" target="_blank" rel="noopener noreferrer">
       RESUME
     </a>

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContactAreaComponent } from './contact-area.component';
+import { ContactAreaComponent } from './content.component';
 
 describe('ContactAreaComponent', () => {
   let component: ContactAreaComponent;
@@ -8,9 +8,9 @@ describe('ContactAreaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ContactAreaComponent ]
+      declarations: [ContactAreaComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ContactAreaComponent);
     component = fixture.componentInstance;
