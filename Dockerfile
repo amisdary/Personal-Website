@@ -2,6 +2,8 @@
 FROM node:latest as build
 WORKDIR /app
 
+ARG BUILD_ENV
+
 COPY package*.json ./
 RUN npm install
 
