@@ -1,0 +1,17 @@
+:80 {
+    root * /usr/share/caddy
+    file_server
+	encode gzip
+	
+	handle_path /assets/icons* {
+		root * /usr/share/caddy/assets/icons
+		file_server
+	}
+
+    @notFound {
+		not path /assets/icons/*
+        not file {path}
+    }
+
+    rewrite @notFound /index.html
+}

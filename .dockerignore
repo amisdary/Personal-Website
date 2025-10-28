@@ -1,0 +1,6 @@
+   # Ignore specific files
+   .gitignore
+   README.md
+
+   # Ignore a directory
+   node_modules/
