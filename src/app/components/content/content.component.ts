@@ -1,18 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.scss']
+    selector: 'app-content',
+    templateUrl: './content.component.html',
+    styleUrls: ['./content.component.scss'],
+    standalone: false
 })
-export class ContentComponent implements OnInit {
+export class ContentComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  displayString: string = "";
+  displayString = "";
 
   listOfStringsToDisplay: string[] = [
     "Born and raised in New Jersey.",
@@ -24,7 +20,7 @@ export class ContentComponent implements OnInit {
     "Currently working as a Software Engineer at Burlington Coat Factory."
   ]
 
-  outputString(listOfStringsToDisplay: string[]): string {
+  outputString(): string {
     // addEventListener(scrollY, window.scrollY)
     return ""
   }

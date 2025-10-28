@@ -14,8 +14,8 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 const backgroundVideo = document.getElementById("background-video");
 const overlayVideo = document.getElementById("overlay-video");
 
-var backgroundVideoDuration: number = 0;
-var overlayVideoDuration: number = 0;
+let backgroundVideoDuration = 0;
+let overlayVideoDuration = 0;
 
 if (backgroundVideo instanceof HTMLVideoElement && overlayVideo instanceof HTMLVideoElement) {
   backgroundVideoDuration = backgroundVideo.duration;
@@ -26,8 +26,8 @@ if (backgroundVideo instanceof HTMLVideoElement && overlayVideo instanceof HTMLV
 const maximumVideoDuration: number = Math.max(backgroundVideoDuration, overlayVideoDuration)
 
 // Accessing the scrollbar element
-// var scrollbar = document.getElementById("scrollbar");
-var scrollbar = document.querySelector(".scrollbar") as HTMLElement;
+// const scrollbar = document.getElementById("scrollbar");
+const scrollbar = document.querySelector(".scrollbar") as HTMLElement;
 
 // Updating the scrollbar height based on the video duration
 if (scrollbar) {

@@ -1,31 +1,29 @@
 import { LinksService } from './../../links.service';
-import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { Component, inject } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
-  selector: 'navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.scss'],
+    standalone: false
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
+
+  private service = inject(LinksService);
+  private sanitizer = inject(DomSanitizer);
 
   headers;
-  applicationName: string = "André Misdary"
+  applicationName = "André Misdary"
 
-  constructor(
-    private service: LinksService,
-    private sanitizer: DomSanitizer
-  ) {
-    this.headers = service.getHeaders();
+  constructor() {
+    this.headers = this.service.getHeaders();
   }
 
   openResume() {
-    let pdfUrl = './assets/Andre-Misdary-Resume.pdf'
+    const pdfUrl = './assets/Andre-Misdary-Resume.pdf'
     window.open(pdfUrl, '_blank')
-  }
-
-  ngOnInit(): void {
   }
 
 }

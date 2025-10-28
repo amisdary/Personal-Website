@@ -8,6 +8,4 @@ export class LinksService {
   getHeaders() {
     return [{'name': 'HOME', 'link': ''}, {'name': 'RESUME', 'link': '/resume'}, {'name': 'PROJECTS', 'link': '/projects'}]
   }
-
-  constructor() { }
 }
