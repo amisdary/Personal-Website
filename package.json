@@ -7,8 +7,8 @@
     "build": "ng build",
     "buildDev": "ng build --configuration development --aot --output-hashing=all",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "lint": "ng lint"
+    "test": "ng test --watch=false --browsers=ChromeHeadless",
+    "lint": "ng lint --max-warnings 0"
   },
   "private": true,
   "dependencies": {
