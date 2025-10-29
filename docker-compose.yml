@@ -3,13 +3,13 @@ version: '3.7'
 services:
   personal-website-dev:
     restart: always
-    image: personal-website-dev:latest
+    image: amisdary/personal-website-dev:latest
     network_mode: bridge
     ports:
       - "4997:80"
   personal-website-tool:
     restart: always
-    image: personal-website:latest
+    image: amisdary/personal-website:latest
     network_mode: bridge
     ports:
       - "4997:80"
