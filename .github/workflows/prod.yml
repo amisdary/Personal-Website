@@ -64,5 +64,6 @@ jobs:
           username: deploy
           key: ${{secrets.SSH_PRIVATE_KEY}}
           script: |
+            cd ~/personal-website
             docker pull amisdary/personal-website:latest
             docker compose up -d --remove-orphans personal-website
