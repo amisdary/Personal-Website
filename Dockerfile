@@ -13,7 +13,10 @@ RUN if [ "$BUILD_ENV" = "dev" ]; then \
     npm run buildDev; \
     elif [ "$BUILD_ENV" = "production" ]; then \
     npm run build; \
-    fi  
+    fi 
+
+# Debug: list build output
+RUN echo "Build output:" && ls -al /app/dist/personal-website 
 
 #Stage 2 - Consume build artifacts and run app
 # SSL termination will happen on the host machine or cloud env
