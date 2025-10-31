@@ -19,13 +19,14 @@ RUN if [ "$BUILD_ENV" = "dev" ]; then \
 # SSL termination will happen on the host machine or cloud env
 FROM nginx:alpine
 
-# arbritrary non http port to forward for flexibility
-# there is nothing wrong with leaving it at default 80
-EXPOSE 80
+# Copy the built Angular app from Stage 1
+COPY --from=build /app/dist/personal-website /usr/share/nginx/html
+
+# Replace the default Nginx configuration
+RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# load file path for static assets into caddy
-COPY --from=build /app/dist/personal-website /usr/share/nginx/html
+EXPOSE 80
 
 # run nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
