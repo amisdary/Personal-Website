@@ -58,9 +58,9 @@ jobs:
           username: deploy
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: |
-            docker-compose.yml
-            Dockerfile
-            nginx.conf
+            "docker-compose.yml"
+            "Dockerfile"
+            "nginx.conf"
           target: "~/personal-website"
 
       - name: Deploy to DigitalOcean droplet
