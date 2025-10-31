@@ -19,15 +19,13 @@ RUN if [ "$BUILD_ENV" = "dev" ]; then \
 # SSL termination will happen on the host machine or cloud env
 FROM nginx:alpine
 
-# Copy the built Angular app from Stage 1
-RUN rm /usr/share/nginx/html
-COPY --from=build /app/dist/personal-website /usr/share/nginx/html
+EXPOSE 80
 
 # Replace the default Nginx configuration
-RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+# Copy the built Angular app from Stage 1
+COPY --from=build /app/dist/personal-website/ /usr/share/nginx/html/
 
 # run nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
