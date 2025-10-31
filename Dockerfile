@@ -15,6 +15,9 @@ RUN if [ "$BUILD_ENV" = "dev" ]; then \
     npm run build; \
     fi
 
+# DEBUG: list contents
+RUN ls -al /app/dist    
+
 #Stage 2 - Consume build artifacts and run app
 # SSL termination will happen on the host machine or cloud env
 FROM nginx:alpine
