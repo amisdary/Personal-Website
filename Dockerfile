@@ -19,6 +19,8 @@ RUN if [ "$BUILD_ENV" = "dev" ]; then \
 # SSL termination will happen on the host machine or cloud env
 FROM nginx:alpine
 
+WORKDIR /app
+
 EXPOSE 80
 
 # Replace the default Nginx configuration
