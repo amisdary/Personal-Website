@@ -27,7 +27,7 @@ EXPOSE 80
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy the built Angular app from Stage 1
-COPY --from=build /app/dist/personal-website/ /usr/share/nginx/html/
+COPY --from=build /app/dist/personal-website /usr/share/nginx/html
 
 # run nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
