@@ -34,6 +34,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+        # Debug: confirm files exist in the runner
+      - name: List files for debug
+        run: |
+          echo "Current directory: $(pwd)"
+          ls -al
+
       - name: Build commit image
         run: sudo docker build --build-arg BUILD_ENV="dev" -t amisdary/personal-website-dev:${{ github.sha }} .
     
@@ -51,16 +57,20 @@ jobs:
           docker push amisdary/personal-website-dev:${{ github.sha }}
           docker push amisdary/personal-website-dev:latest 
 
-      - name: Copy docker-compose.yml to droplet
+    # Debug: confirm files exist again before SCP
+      - name: List files for SCP
+        run: ls -al
+
+      - name: Copy docker and nginx files to droplet
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.DROPLET_IP }}
           username: deploy
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: |
-            "docker-compose.yml"
-            "Dockerfile"
-            "nginx.conf"
+            docker-compose.yml
+            Dockerfile
+            nginx.conf
           target: "~/personal-website"
 
       - name: Deploy to DigitalOcean droplet
