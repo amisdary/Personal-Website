@@ -20,6 +20,7 @@ RUN if [ "$BUILD_ENV" = "dev" ]; then \
 FROM nginx:alpine
 
 # Copy the built Angular app from Stage 1
+RUN rm /usr/share/nginx/html
 COPY --from=build /app/dist/personal-website /usr/share/nginx/html
 
 # Replace the default Nginx configuration
